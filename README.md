@@ -87,5 +87,5 @@ The boilerplate comes with several Yarn scripts located in the [`package.json`][
 
 ## License
 
-Copyright &copy; 2016 [Morris Allison III](http://morris.xyz).
+Copyright &copy; 2017 [Morris Allison III](http://morris.xyz).
 <br>Released under the [MIT license](./LICENSE).
