@@ -1,7 +1,5 @@
 # [![typescript-boilerplate][logo]][homepage]
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/morrisallison/typescript-boilerplate.svg)](https://greenkeeper.io/)
-
 [logo]: https://cldup.com/PyYZbgDH5I.svg
 [homepage]: https://github.com/morrisallison/typescript-boilerplate
 
