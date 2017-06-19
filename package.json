@@ -16,7 +16,7 @@
   "devDependencies": {
     "@morrisallison/tslint-config": "^0.1.0",
     "@types/node": "^7.0.8",
-    "jsdom": "^9.9.1",
+    "jsdom": "^10.0.0",
     "jsdom-global": "^2.1.1",
     "livescript": "^1.5.0",
     "mocha": "^3.2.0",
