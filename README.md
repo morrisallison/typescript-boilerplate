@@ -27,14 +27,14 @@ A boilerplate for TypeScript packages.
 * Track code coverage using [nyc][] and [Codecov][codecov-site]
 * Run unit tests without bundling using [TypeScript Node][]
 * Iron out the kinks with [TSLint][]
-* Relax with a stable and reliable test suite using [Mocha][], [jsdom][], and [Must.js][]
+* Relax with a stable and reliable test suite using [Tap][], [jsdom][], and [Must.js][]
 
 [codecov-site]: https://codecov.io
 [jsdom]: https://github.com/tmpvar/jsdom
-[Mocha]: https://github.com/mochajs/mocha
 [Must.js]: https://github.com/moll/js-must
 [nyc]: https://github.com/istanbuljs/nyc
 [Rollup]: https://github.com/rollup/rollup
+[Tap]: http://www.node-tap.org/
 [Travis CI]: https://travis-ci.org/
 [TSLint]: https://github.com/palantir/tslint
 [TypeScript Node]: https://github.com/TypeStrong/ts-node
