@@ -1,8 +1,8 @@
 {
   "name": "@morrisallison/typescript-boilerplate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Morris Allison III <author@morris.xyz> (http://morris.xyz)",
-  "description": "An opinionated, fully featured boilerplate for TypeScript packages.",
+  "description": "A boilerplate for TypeScript packages.",
   "license": "MIT",
   "private": true,
   "homepage": "https://github.com/morrisallison/typescript-boilerplate",
@@ -15,37 +15,35 @@
   "dependencies": {},
   "devDependencies": {
     "@morrisallison/tslint-config": "^0.1.0",
-    "@types/node": "^8.0.10",
-    "jsdom": "^9.9.1",
-    "jsdom-global": "^2.1.1",
-    "livescript": "^1.5.0",
-    "mocha": "^3.2.0",
-    "must": "^0.13.2",
+    "@types/node": "^8.0.19",
+    "jsdom": "^11.1.0",
+    "jsdom-global": "^3.0.2",
+    "must": "^0.13.4",
+    "npm-run-all": "^4.0.2",
     "nyc": "^11.0.3",
     "rimraf": "^2.5.4",
     "rollup": "^0.45.0",
     "rollup-plugin-sourcemaps": "^0.4.1",
-    "ts-node": "^3.0.6",
+    "tap": "^10.7.1",
+    "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
-    "typescript": "^2.1.4"
+    "typescript": "^2.4.2"
   },
   "scripts": {
-    "build": "yarn run compile:dts && yarn run build:es5 && yarn run build:es6",
-    "build:es5": "yarn run compile:es5 && yarn run bundle:es5",
-    "build:es6": "yarn run compile:es6 && yarn run bundle:es6",
-    "bundle": "yarn run bundle:es5 && yarn run bundle:es6",
+    "build": "run-s clean compile bundle",
     "bundle:es5": "rollup --sourcemap -c config/rollup.config.es5.js",
     "bundle:es6": "rollup --sourcemap -c config/rollup.config.es6.js",
-    "clean": "rimraf .nyc_output build coverage dist",
-    "compile": "yarn run compile:dts && yarn run compile:es5 && yarn run compile:es6",
-    "compile:dev": "tsc",
+    "bundle": "run-p bundle:**",
+    "ci": "run-s build test cover",
+    "clean": "rimraf build coverage dist",
     "compile:dts": "tsc -p config/tsconfig.dts.json",
     "compile:es5": "tsc -p config/tsconfig.es5.json",
     "compile:es6": "tsc -p config/tsconfig.es6.json",
-    "cover": "nyc --reporter lcov --reporter text --reporter html --extension .ts --extension .tsx yarn test",
-    "gamut": "yarn run clean && yarn run build && yarn run cover && yarn run lint",
+    "compile": "run-p compile:**",
+    "cover": "nyc report",
     "lint": "tslint --project tsconfig.json",
-    "test": "mocha --compilers ts:ts-node/register,ls:livescript --recursive tests"
+    "test": "run-s lint unit",
+    "unit": "tap --cov tests/unit/**/*.spec.js"
   },
   "main": "./dist/typescript-boilerplate.js",
   "jsnext:main": "./dist/typescript-boilerplate.jsnext.js",
@@ -55,8 +53,22 @@
     "jspmNodeConversion": false,
     "main": "./dist/typescript-boilerplate.jsnext.js"
   },
-  "_rollup": {
+  "engines": {
+    "node": "^8.2.1",
+    "npm": "^5.3.0"
+  },
+  "rollup": {
     "moduleId": "typescript-boilerplate",
     "moduleName": "TypeScriptBoilerplate"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
   }
 }

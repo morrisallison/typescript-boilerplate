@@ -6,11 +6,11 @@ var config = {
     entry: 'build/es5/main.js',
     targets: [
         {
-            dest: `dist/${pkg._rollup.moduleId}.js`,
+            dest: `dist/${pkg.rollup.moduleId}.js`,
             format: 'umd'
         },
         {
-            dest: `dist/${pkg._rollup.moduleId}.jsnext.js`,
+            dest: `dist/${pkg.rollup.moduleId}.jsnext.js`,
             format: 'es'
         },
     ]
