@@ -6,7 +6,7 @@ var config = {
     entry: 'build/es6/main.js',
     targets: [
         {
-            dest: `dist/${pkg._rollup.moduleId}.es6.js`,
+            dest: `dist/${pkg.rollup.moduleId}.es6.js`,
             format: 'es'
         }
     ]

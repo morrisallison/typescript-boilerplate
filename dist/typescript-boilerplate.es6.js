@@ -1,5 +1,5 @@
 /*
- * @morrisallison/typescript-boilerplate v0.1.0
+ * @morrisallison/typescript-boilerplate v1.0.0
  * Copyright (c) Morris Allison III <author@morris.xyz> (http://morris.xyz). All rights reserved.
  * Released under the MIT license
  * @preserve

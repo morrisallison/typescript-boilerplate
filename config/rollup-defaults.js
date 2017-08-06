@@ -5,8 +5,10 @@ var pkg = require('../package.json');
 
 export default {
     banner: banner,
-    moduleId: pkg._rollup.moduleId,
-    moduleName: pkg._rollup.moduleName,
+    moduleName: pkg.rollup.moduleName,
+    amd: {
+        id: pkg.rollup.moduleId
+    },
     plugins: [
         sourcemaps()
     ],
